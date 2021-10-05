@@ -1,11 +1,8 @@
 FROM ubuntu:latest
 
-RUN apt-get -y update
-RUN apt upgrade
-#RUN apt install wget -y
-#RUN wget https://www.python.org/ftp/python/3.9.7/Python-3.9.7.tgz
-#RUN tar xzvf Python-3.9.7.tgz
+ENV DEBIAN_FRONTEND=noninteractive
 
-#RUN apt install python3-pip -y
-
-RUN apt install python3.9 -y
+RUN apt-get -y update && \
+  apt-get install -y \
+  python3.9 \
+  python3-pip
